@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:open_file/open_file.dart';
+import 'main.dart';
 
 class HomePage extends StatefulWidget{
   const HomePage({Key? key}) : super (key: key);
@@ -22,6 +23,36 @@ class _HomePageState extends State<HomePage>{
       appBar: AppBar(
         title: const Text('Interactive Widget'),
         centerTitle: true,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text('Contact'),
+              onTap: () {
+                Navigator.pushNamed(context, '/contact');
+              },
+            ),
+            ListTile(
+              title: Text('Gallery'),
+              onTap: () {
+                Navigator.pushNamed(context, '/gallery');
+              },
+            ),
+            ListTile(
+              title: Text('Home'),
+              onTap: () {
+                Navigator.pushNamed(context, '/home');
+              },
+            ),
+            ListTile(
+              title: Text('Contact Manager'),
+              onTap: () {
+                Navigator.pushNamed(context, '/contact_manager');
+              },
+            ),
+          ],
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
@@ -145,10 +176,20 @@ class _HomePageState extends State<HomePage>{
     if (result == null) return;
 
     final file = result.files.first;
-    _openFile(file);
+    String? filePath = file.path;
+    //_openFile(file);
+
+    if (filePath != null) {
+    Navigator.push(
+      context,
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(selectedImage: filePath), 
+        ),
+      );
+    }
   }
 
   void _openFile(PlatformFile file){
-    OpenFile.open(file.path);
+      OpenFile.open(file.path);
   }
 }
