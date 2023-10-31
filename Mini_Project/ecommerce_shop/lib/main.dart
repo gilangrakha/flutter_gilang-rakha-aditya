@@ -1,12 +1,19 @@
-import 'package:ecommerce_shop/pages/main_home_page.dart';
+import 'package:ecommerce_shop/models/user_model.dart';
+import 'package:ecommerce_shop/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => UsernameProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainHomePage(),
+      home: LoginRegisterPage(),
     );
   }
 }
