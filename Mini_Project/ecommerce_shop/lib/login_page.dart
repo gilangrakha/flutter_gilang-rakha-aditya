@@ -164,10 +164,8 @@ void _login(BuildContext context) async {
   final authenticated = await databaseHelper.loginUser(username, password);
 
   if (authenticated) {
-    // Set the username using the provider
     context.read<UsernameProvider>().setUsername(username);
 
-    // Navigate to the home page upon successful login.
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (context) => MainHomePage(),
     ));
@@ -180,12 +178,8 @@ void _login(BuildContext context) async {
     final username = _usernameController.text;
     final password = _passwordController.text;
 
-    // Check if the username is already taken (you should add this logic).
-    // If the username is available, register the user.
     await databaseHelper.insertUser(username, password);
 
-    // Navigate to the home page or perform other actions upon successful registration.
-    // Replace this line with your navigation logic.
     print('Registration Successful');
   }
 }

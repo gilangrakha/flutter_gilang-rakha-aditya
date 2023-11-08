@@ -1,5 +1,6 @@
 import 'package:ecommerce_shop/login_page.dart';
 import 'package:ecommerce_shop/pages/main_home_page.dart';
+import 'package:ecommerce_shop/screens/reccomendation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ecommerce_shop/models/user_model.dart';
@@ -61,7 +62,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 5,),
                       Text(
-                        'Lorem ipsum amet dolor', 
+                        'Get Your Own Fuds! $username', 
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.normal,
@@ -173,7 +174,6 @@ class ProfileScreen extends StatelessWidget {
                     },
                     child: Icon(
                       Icons.home_filled,
-                      color: Colors.black,
                     ),
                   ),
                   SizedBox(height: 3),
@@ -187,14 +187,14 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => MainHomePage(),
+                          builder: (context) => RecommendationPage(),
                         ),
                       );
                     },
-                    child: Icon(Icons.shopify),
+                    child: Icon(Icons.star),
                   ),
                   SizedBox(height: 3),
-                  Text('Cart'),
+                  Text('Our Best'),
                 ],
               ),
               Column(
@@ -203,11 +203,12 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => ProfileScreen(),
+                          builder: (context) => ProfileScreen(
+                          ),
                         ),
                       );
                     },
-                    child: Icon(Icons.person, color: Colors.grey,),
+                    child: Icon(Icons.person, color: Colors.green,),
                   ),
                   SizedBox(height: 3),
                   Text('Account'),
@@ -217,7 +218,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+          );
   }
   showLogoutConfirmationDialog(BuildContext context) {
   showDialog(

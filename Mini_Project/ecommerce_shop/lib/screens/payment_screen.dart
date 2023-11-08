@@ -83,7 +83,7 @@ class _PaymentPageState extends State<PaymentPage> {
                             Column(
                               children: const [
                                 Text('Total Price'),
-                                Text('\$18.00', style: TextStyle(
+                                Text('\$10.00', style: TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xff2A977D),
@@ -113,7 +113,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 ),
                                 child: GestureDetector(
                                   onTap: (){
-                                    Navigator.of(context).pop(
+                                    Navigator.of(context).push(
                                       MaterialPageRoute(builder: (context)=> MainHomePage())
                                     );
                                   },

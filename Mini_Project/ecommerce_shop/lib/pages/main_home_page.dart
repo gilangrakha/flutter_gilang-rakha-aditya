@@ -1,5 +1,6 @@
 import 'package:ecommerce_shop/screens/detail_screen.dart';
 import 'package:ecommerce_shop/screens/profile_screen.dart';
+import 'package:ecommerce_shop/screens/reccomendation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -140,14 +141,14 @@ class _MainHomePageState extends State<MainHomePage> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => MainHomePage(),
+                          builder: (context) => RecommendationPage(),
                         ),
                       );
                     },
-                    child: Icon(Icons.shopify),
+                    child: Icon(Icons.star),
                   ),
                   SizedBox(height: 3),
-                  Text('Cart'),
+                  Text('Our Best'),
                 ],
               ),
               Column(
@@ -180,7 +181,7 @@ class _MainHomePageState extends State<MainHomePage> {
               children: [
                 Container(
                   height: 60,
-                  width: 280,
+                  width: 370,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -202,23 +203,6 @@ class _MainHomePageState extends State<MainHomePage> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                const Badge(
-                  label: Text('1'),
-                  child: Image(
-                    height: 30,
-                    width: 30,
-                    image: AssetImage('assets/icons/img.png'),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                const Badge(
-                  label: Text('9+'),
-                  child: Image(
-                    height: 30,
-                    width: 30,
-                    image: AssetImage('assets/icons/chat.png'),
-                  ),
-                ),
               ],
             ),
           ),
@@ -237,13 +221,13 @@ class _MainHomePageState extends State<MainHomePage> {
           padding: const EdgeInsets.only(top: 20.0, left: 25, right: 18),
           child: Row(
             children: const [
-              Text('Best Sale Product', style: TextStyle(
+              Text('Best Burger', style: TextStyle(
                 fontSize: 20,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),),
               SizedBox(
-                width: 130,
+                width: 180,
               ),
               Text('See more', style: TextStyle(
                 fontSize: 17,
