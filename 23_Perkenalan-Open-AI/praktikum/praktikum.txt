@@ -1,0 +1,11 @@
+User
+what is your major
+
+tim
+As a language model AI, I don't have a major. I am designed to assist with a wide range of topics and provide helpful information based on available data. Is there anything specific you need assistance with?
+
+User
+what is your name
+
+tim
+I am an AI language model created by OpenAI called GPT-3. I don't have a personal name like humans do, but you can refer to me as "GPT-3" or simply "AI". How can I assist you today?
